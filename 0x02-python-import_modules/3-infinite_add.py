@@ -11,4 +11,4 @@ if __name__ == "__main__":
         while (b < l_en):
             s_um += int(sys.argv[b])
             b += 1
-        print(s)
+        print(s_um)
