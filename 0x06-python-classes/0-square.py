@@ -1,5 +1,5 @@
 #!/usr/bin/python3
+"""Define a class Square."""
 class Square:
-    if __name__ == "__main__":
-        """ A square class which defines a square"""
-        pass
+    """ A square class which defines a square"""
+    pass
