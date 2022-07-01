@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 
+
 """ This function takes two args: a and b
     converts them to ints from floats if they are
     are computes the sum.
     Return Value will be a + b
     raise exceptions for certain edge cases detailed"""
+
 
 def add_integer(a, b=98):
     '''Returns an int: the sum of a and b
@@ -16,4 +18,3 @@ def add_integer(a, b=98):
     if ((not isinstance(b, int) and not isinstance(b, float))):
         raise TypeError("b must be an integer")
     return (int(a) + int(b))
-
