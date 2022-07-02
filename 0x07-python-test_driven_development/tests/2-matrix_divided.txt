@@ -40,7 +40,7 @@ Edge cases:
 	===============TypeError====Matrix must be a matrix============
 
 
-	>>> matrix_divided(['f', [2, 2]], 1)
+	>>> matrix_divided(0, 0)
 	Traceback (most recent call last):
 	   	 ...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats

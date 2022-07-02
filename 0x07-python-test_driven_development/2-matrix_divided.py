@@ -11,6 +11,9 @@ def matrix_divided(matrix, div):
         Args: matrix(2dmatrix), div(int)
         """
 
+    if type(matrix) in [int, float, bool, None, str]:
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
 
