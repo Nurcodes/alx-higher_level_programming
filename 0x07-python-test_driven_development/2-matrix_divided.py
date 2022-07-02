@@ -14,12 +14,15 @@ def matrix_divided(matrix, div):
     second = "(list of lists) of integers/floats"
 
     for i in matrix:
-        for j in i:
-            if not isinstance(j, int) and not isinstance(j, float):
-                flag = True
-                break
+        if matrix is not None:
+            for j in i:
+                if not isinstance(j, int) and not isinstance(j, float):
+                    flag = True
+                    break
+        else:
+            raise(TypeError("{}{}".format(first, second)))
     if flag:
-        raise TypeError(first + second)
+        raise TypeError("{}{}".format(first, second))
 
     rs = []
     for row in matrix:

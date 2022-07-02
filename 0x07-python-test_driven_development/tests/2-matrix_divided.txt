@@ -1,8 +1,10 @@
-=========================
-The ``matrix_divided``
-=========================
+The ``2-matrix_divided``  module
+------------------------------
+------------------------------
 
-This module contains one function called
+Using ``matrix_divide``
+-----------------------
+-----------------------
 
 
 ``matrix_divided`` returns a new list of divided lists, from an input arguement
@@ -10,21 +12,28 @@ This module contains one function called
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
-First import ``matrix_divided`` from ``2-matrix_divided``
+First import ``matrix_divided`` from the ``2-matrix_divided`` module:
 	
-	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 	
 Now use it:
 
-	>>> matrix_divided([[1,2],[1,2]], 3)
+---- Without possible error -------------------------------------------------
+
+	>>> matrix_divided([[1,2], [1,2]], 3)
 	[[0.33, 0.67], [0.33, 0.67]]
 
--------------------------------------------------------------------------------
 
 	>>> matrix_divided([[1, 4], [3, 2]], 2)
 	[[0.5, 2.0], [1.5, 1.0]]
 
--------------------------------------------------------------------------------
+
+	>>> matrix_divided([[3, 3, 18, 6],[9, 3, 12, 6]], 3)
+	[[1.0, 1.0, 6.0, 2.0], [3.0, 1.0, 4.0, 2.0]]
+
+
+	>>> matrix_divided([[2, 4, 5, 2],[4, 5, 6, 2],[1, 4, 5, 6]], 2)
+	[[1.0, 2.0, 2.5, 1.0], [2.0, 2.5, 3.0, 1.0], [0.5, 2.0, 2.5, 3.0]]
 
 Edge cases:
 	
@@ -59,4 +68,11 @@ Edge cases:
 	Traceback (most recent call last):
 		...
 	ZeroDivisionError: division by zero
+
+	===============TypeError==========list cant be none or nan========
+	
+	>>> matrix_divided([[None], [None]], 100)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	
