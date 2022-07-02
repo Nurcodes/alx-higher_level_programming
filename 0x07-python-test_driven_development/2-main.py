@@ -2,16 +2,8 @@
 matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 matrix = [
-    [None],
-    [9, 3, 12, 6]
+    [1, 2, 3],
+    [4, 5, 6]
 ]
-
-m1 = [
-        None,
-        None
-    ]
-
-print("\n-------------------\n")
-
-print(matrix_divided(m1, 2))
-print(m1)
+print(matrix_divided(matrix, 3))
+print(matrix)

@@ -8,42 +8,25 @@
 def matrix_divided(matrix, div):
     """Divides a 2d matrix
         by a given number
-        Args: matrix(2dmatrix), div(int)"""
-    flag = False
-    first = "matrix must be a matrix "
-    second = "(list of lists) of integers/floats"
-
-    for i in matrix:
-        if matrix is not None:
-            for j in i:
-                if not isinstance(j, int) and not isinstance(j, float):
-                    flag = True
-                    break
-        else:
-            raise(TypeError("{}{}".format(first, second)))
-    if flag:
-        raise TypeError("{}{}".format(first, second))
-
-    rs = []
-    for row in matrix:
-        rs.append(len(row))
-    first = rs[0]
-    result = True
-    for i in rs:
-        if first != i:
-            result = False
-            break
-        else:
-            continue
-    if not result:
-        raise TypeError("Each row of the matrix must have the same size")
+        Args: matrix(2dmatrix), div(int)
+        """
 
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    new = [item[:] for item in matrix]
-    for i in range(len(new)):
-        for j in range(len(new[i])):
-            new[i][j] = round(new[i][j] / div, 2)
-    return new
+
+    if type(matrix[0]) not in [list]:
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
+
+    if not all(len(row) == len(matrix[0]) for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
+
+    if not all(type(num) in [int, float] for row in matrix for num in row):
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
+    new_matrix = [[eval("{:.2f}".format(num / div)) for num in row]
+                  for row in matrix]
+    return new_matrix
