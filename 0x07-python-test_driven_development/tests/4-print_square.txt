@@ -32,6 +32,11 @@ Type of Error
 =============
 
 when called with no int::
+
+	>>> print_square([90,89,'f'])
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
 	
 	>>> print_square('f')
 	Traceback (most recent call last):
