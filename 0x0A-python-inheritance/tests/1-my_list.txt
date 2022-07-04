@@ -1,0 +1,80 @@
+```Using 1-my_list.py```
+------------------------
+
+``` class MyList inherits from List class and returns sorted list with a method ```-----------------------------------------------------------------------------------
+
+Usage::
+	
+	>>> MyList = __import__("1-my_list").MyList
+
+Checking for module docstring:
+>>> m = __import__("1-my_list").__doc__
+>>> len(m) > 1
+True
+
+
+
+checking for class doc:
+>>> c = __import__("1-my_list").MyList.__doc__
+>>> len(c) > 1
+True
+
+checking for method doc:
+>>> f = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(f) > 1
+True
+
+
+checking for cases::
+	
+	>>> my_list = MyList()
+	>>> my_list.append(0)
+	>>> my_list.append(10)
+	>>> my_list.append(-10)
+	>>> my_list.append(256)
+	
+	>>> print(my_list)
+	[0, 10, -10, 256]
+
+	>>> my_list.print_sorted()
+	[-10, 0, 10, 256]
+
+empty obj::
+
+	>>> emp = MyList()
+	>>> print(emp)
+	[]
+
+	>>> emp.print_sorted()
+	[]
+
+checking Null::
+
+	>>> obj1 = MyList()
+	
+	>>> obj1.append(NULL)
+	Traceback (most recent call last):
+		...
+	NameError: name 'NULL' is not defined
+
+checking NaN::
+
+	>>> obj2 = MyList()
+	
+	>>> obj2.append(NaN)
+	Traceback (most recent call last):
+		...
+	NameError: name 'NaN' is not defined
+
+checking None::
+
+	>>> obj3 = MyList()
+	>>> obj3.append(None)
+
+	>>> print(obj3)
+	[None]
+	
+	>>> obj3.print_sorted()
+	[None]
+
+
