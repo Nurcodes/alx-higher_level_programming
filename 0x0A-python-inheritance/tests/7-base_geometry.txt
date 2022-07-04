@@ -1,0 +1,50 @@
+```basegeometry```
+==========================
+
+
+
+
+usage::
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+check docstrings::
+
+	>>> m = __import__('7-base_geometry').BaseGeometry.__doc__
+	>>> len(m) > 1
+	True
+
+	>>> a = __import__('7-base_geometry').BaseGeometry.area.__doc__
+	>>> len(a) > 1
+	True
+	
+	>>> i = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	>>> len(i) > 1
+	True
+
+======================================
+checks::
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("height", 20)
+	
+	>>> bg.integer_validator("check", 200)
+	
+fails::
+
+	>>> bg.integer_validator("one", "two")
+	Traceback (most recent call last):
+		...
+	TypeError: one must be an integer
+
+	>>> bg.integer_validator("three", -1)
+	Traceback (most recent call last):
+		...
+	ValueError: three must be greater than 0
+
+	>>> print(bg.area())
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+	
