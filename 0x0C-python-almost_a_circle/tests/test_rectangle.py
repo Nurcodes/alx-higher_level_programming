@@ -1,9 +1,8 @@
-#!/usr/bin/python3
 """ Rectangle testing """
 import unittest
 
-from models.base import Base
 from models.rectangle import Rectangle
+
 
 
 class rectangle_t(unittest.TestCase):
