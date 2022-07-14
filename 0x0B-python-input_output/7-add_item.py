@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """This script adds all args to a python list, then saves it to a json file"""
+
+
 import sys
 
 if __name__ == "__main__":
