@@ -3,6 +3,7 @@
 import unittest
 
 from models.base import Base
+from models.rectangle import Rectangle
 
 class base_t(unittest.TestCase):
     """ test the id """
@@ -15,6 +16,10 @@ class base_t(unittest.TestCase):
         i5 = Base(100)
         i6 = Base(None)
         i7 = Base(id=80)
+<<<<<<< HEAD:0x0C-python-almost_a_circle/tests/test_models/test_base.py
+=======
+
+>>>>>>> 7d6c3458f7f2f59e51c84ee142b8fb62af96b70a:0x0C-python-almost_a_circle/tests/test_base.py
         self.assertEqual(i1.id, 1)
         self.assertEqual(i2.id, 2)
         self.assertEqual(i3.id, 3)
