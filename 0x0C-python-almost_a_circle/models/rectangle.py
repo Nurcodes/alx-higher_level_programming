@@ -1,20 +1,26 @@
 #!/usr/bin/python3
 """ Import base """
-from base import Base
+
+
+from .base import Base
+
 
 class Rectangle(Base):
+    """ rectangle class inherits from base class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ call the super() """
+
         super(Rectangle, self).__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
         return self.__width
+
     @width.setter
     def width(self, value):
         self.__width = value
@@ -22,6 +28,7 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
+
     @height.setter
     def height(self, value):
         self.__height = value
@@ -29,6 +36,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
+
     @x.setter
     def x(self, value):
         self.__x = value
@@ -36,6 +44,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
+
     @y.setter
     def y(self, value):
         self.__y = value
