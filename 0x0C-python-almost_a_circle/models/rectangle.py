@@ -17,6 +17,25 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    @staticmethod
+    def validatedim(name, value):
+        """ Static method """
+        if type(value) is not int:
+            raise TypeError(name + ' must be an integer')
+
+        if value <= 0:
+            raise ValueError(name + ' must be > 0')
+
+    @staticmethod
+    def validatepos(name, value):
+        """ Static method """
+
+        if type(value) is not int:
+            raise TypeError(name + ' must be an integer')
+
+        if value < 0:
+            raise ValueError(name + ' must be >= 0')
+
     @property
     def width(self):
         return self.__width
