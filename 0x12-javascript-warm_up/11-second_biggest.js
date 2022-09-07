@@ -1,14 +1,9 @@
 #!/usr/bin/node
-
-function second (myArray) {
-  if (myArray.length === 2 || myArray.length === 3) {
-    const o = '0';
-    return o;
-  }
-
-  myArray.sort();
-  const res = myArray[myArray.length - 2];
-  return res;
+if (process.argv.length <= 3) {
+  console.log(0);
+} else {
+  const args = process.argv.map(Number)
+    .slice(2, process.argv.length)
+    .sort((a, b) => a - b);
+  console.log(args[args.length - 2]);
 }
-
-console.log(second(process.argv));
