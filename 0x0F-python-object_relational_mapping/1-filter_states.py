@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
-import MySQLdb
-from sys import argv
-
 ''' This module only lists states starting with
 N from a db using mysqldb
 '''
 
 if __name__ == '__main__':
+    from sys import argv
+    import MySQLdb
     conn = MySQLdb.connect(
             host='localhost', port=3306,
             user=argv[1], passwd=argv[2],
