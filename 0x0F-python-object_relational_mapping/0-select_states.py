@@ -17,9 +17,9 @@ if __name__ == "__main__":
             host="localhost", port=3306, user=usr,
             password=pss, db=d)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
-        print("{}".format(row))
+        print(row)
     cur.close()
     db.close()
